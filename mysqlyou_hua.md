@@ -19,6 +19,8 @@
 对于长字符类型的字段，增加算因时，需要增加前缀，计算方式为：```select  count(distinct left(b,5)) /count(distinct b) as left5,count(distinct left(b,6))/count(distinct b) as left6    from test_unique limit 1```，其中5，6是预估值，对于UUID这样长字符类型，一般前缀是6.增加索引时sql语句为：```alter table test.test_unique add key (left(6));```  
 对于不能重复的字段，建议使用唯一索引，一是保证插入值唯一，二是提高查询速度  
 在where、order 、group by后面的字段，尽量建立索引，通过需要注意的是如果where后面是多字段，那么需要建立联合索引，而不是单个建立索引，并且需要注意联合索引的顺序，例如```where a='x' and b = 'y'```,在其它sql中出现```where b=‘z’```这样的情况，那么联合索引顺序为（b,a），而不是单独建立（a,b）和（b）两个索引，因为在建立联合索引（b,a）时，mysql会建立两个索引(b)，（b,a）两个索引。
+#### 避免索引失效
+
 
 
   
