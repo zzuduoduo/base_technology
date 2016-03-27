@@ -5,8 +5,8 @@
 * 后台服务器架构
   * 单体应用和微服务应用
   * RESTful
-  * Mysql优化
   * Docker
+  * Mysql优化
   * 日志监控ELK
   * 搜索引擎
 * Html5
