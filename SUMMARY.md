@@ -3,8 +3,8 @@
 * [Introduction](README.md)
 * [总体架构](zong_ti_jia_gou.md)
 * 后台服务器架构
-  * 单体应用
-  * 微服务应用
+  * 单体应用和微服务应用
+  * RESTful
   * Mysql优化
   * Docker
   * 日志监控ELK
