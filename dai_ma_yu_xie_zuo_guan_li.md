@@ -1,7 +1,9 @@
-# 代码与协作管理
+#代码与协作管理
 代码最早是svn进行管理的，但在快速开发过程中分支管理一直是一个头疼的问题，前东家使用的商业代码版本管理软件，分支管理也是非常头疼，以至于最后都不敢建立分支。同时svn在code review上也是无能无力，必须还需要一个专门的code review平台来进行管理，对于小团队来说，有点得不偿失。因此在这样的情况下，我们选择了Git，并使用gitlab进行管理，好处是：  
 * 代码分支管理非常方便，通过一系列规范，分支管理非常清晰易掌握
-* code review可以很方便进行，并且还是强制性的进行。
-注：代码管理参考leancloud的管理方法，网址是：[链接](http://open.leancloud.cn/git-branch-guide.html)
+* code review可以很方便进行，并且还是强制性的进行。  
+
+注：代码管理参考leancloud的管理方法，网址是：[链接](http://open.leancloud.cn/git-branch-guide.html)，在此基础上进行小部分修改。  
+
 
 
