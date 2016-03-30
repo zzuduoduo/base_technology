@@ -47,6 +47,20 @@
 这里最后一步是将多次commit合成一个commit，方便后期管理。在合并过程中，需要将第一个之外的pick改成s。
 
 
+###第四步：推送到远程仓库
+合并完代码后，就需要把功能开发分支合并到远程仓库
+
+> git push --force origin feature-x-issueNO
+
+git push 命令带上--force命令，是因为rebase可能改变了分支的历史，需要强制推送。  
+
+###第五步：发出pull request
+推送完代码后，在gitlab后就会出现merge request的提示，这时就要进行pull request，写上注释，写明评审人和合并分支。截图如下：
+
+###第六步：code review
+第五步完成后，评审人就会收到邮件，直接在gitlab进行查看分支合并历史，对代码进行评审，如果评审通过，进行代码合并并删除分支。如果评审不通过，写明原因，退回开发人员。
+
+
 
 
 
