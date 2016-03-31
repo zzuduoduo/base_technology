@@ -64,7 +64,10 @@ git push 命令带上--force命令，是因为rebase可能改变了分支的历�
 在代码测试完毕后，先将release分支删除，重新建立release分支，从master分支同步代码。然后根据release分支进行build代码，部署上线成功后，打tag，服务器tag标签为上线日期，比如：2016.03.31，客户端的则根据三段式规则，比如：v3.0.1, v<major>.<minor>.<patch>  
 
 ### bug-fix分支
-在上线后，可能出现紧急问题，如果不是阻断性问题，尽量放到下一版本中，如果必须立即修复，那么必须启用bug-fix分支，
+在上线后，可能出现紧急问题，如果不是阻断性问题，尽量放到下一版本中，如果必须立即修复，那么按照下列步骤进行：  
+1. 如果此问题已经在master分支里解决，那么直接在release分支里cherry-pick master分支的对应的commit，如果没有转到2.  
+2. 建立bug-fix分支，开发完成后发起pull request请求代码评审，评审通过后，代码合并到master分支，将bug-fix分支删除。
+3. 在release分支里cherry-pick master分支的对应的commit，部署上线成功后，打tag，如果是服务器，tag为上个版本后面加英文字母，比如，2016.03.31a，如果是客户端，那patch加1。
 
 
 
